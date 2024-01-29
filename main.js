@@ -3,7 +3,7 @@ function getComputerChoice(){
     let computerChoice = array[Math.floor(Math.random() * array.length)];
     return computerChoice;
 }
-
+let computerResult = getComputerChoice();
 console.log(getComputerChoice());
 
 function playerSelection() {
@@ -16,20 +16,24 @@ function playerSelection() {
 }
 return playerChoice
 }
-
 let playerResult = playerSelection();
 console.log(playerResult)
 
-function determineWinner(playerResult, computerChoice) {
-    let result;
-    if(playerResult === 'rock' && computerChoice ==='scissors'){
-        resultesult = true;
-    } else if (playerResult === 'rock' && computerChoice ==='paper'){
-        result = false;
-    } else if (playerResult === 'rock' && computerChoice ==='rock'){
-        result = null;
+//what are the two parameters im assing in saying?
+function determineWinner(playerResult, computerResult) {
+    console.log("Player Result:", playerResult);
+    console.log("Computer Choice:", computerResult);
+
+    let result = 0;
+    if(playerResult === 'rock' && computerResult ==='scissors'){
+        result = 'Winner!';
+    } else if (playerResult === 'rock' && computerResult ==='paper'){
+        result = 'Loser!';
+    } else if (playerResult === 'rock' && computerResult ==='rock'){
+        result = 'Tie!';
     }
+    console.log("Result:", result);
     return result
 }
-let roundResult = determineWinner();
+let roundResult = determineWinner(playerResult, computerResult );
 console.log(roundResult)
