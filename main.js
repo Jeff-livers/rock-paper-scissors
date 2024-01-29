@@ -4,7 +4,6 @@ function getComputerChoice(){
     return computerChoice;
 }
 let computerResult = getComputerChoice();
-console.log(getComputerChoice());
 
 function playerSelection() {
    let playerChoice = prompt("Enter your choice: ").trim().toLowerCase();
@@ -17,7 +16,6 @@ function playerSelection() {
 return playerChoice
 }
 let playerResult = playerSelection();
-console.log(playerResult)
 
 //what are the two parameters im assing in saying?
 function determineWinner(playerResult, computerResult) {
@@ -27,10 +25,22 @@ function determineWinner(playerResult, computerResult) {
     let result = 0;
     if(playerResult === 'rock' && computerResult ==='scissors'){
         result = 'Winner!';
-    } else if (playerResult === 'rock' && computerResult ==='paper'){
+    } else if ( playerResult === 'rock' && computerResult ==='paper'){
         result = 'Loser!';
     } else if (playerResult === 'rock' && computerResult ==='rock'){
         result = 'Tie!';
+    } else if(playerResult === 'paper' && computerResult ==='scissors'){
+        result = 'Loser!';
+    } else if (playerResult === 'paper' && computerResult ==='paper'){
+        result = 'Tie!';
+    } else if (playerResult === 'paper' && computerResult === 'rock'){
+        result = 'Winner!';
+    } else if (playerResult === 'scissors' && computerResult === 'scissors'){
+        result = 'Tie!';
+    } else if (playerResult === 'scissors' && computerResult === 'paper'){
+        result = 'Winner!'
+    } else if(playerResult === 'scissors' && computerResult === 'rock'){
+        result = 'Loser!'
     }
     console.log("Result:", result);
     return result
